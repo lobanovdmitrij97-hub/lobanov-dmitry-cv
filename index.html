@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лобанов Дмитрий | HR Generalist (HR BP) | IT Recruitment Expert</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; color: #333; 
+            max-width: 1000px; margin: 0 auto; 
+            padding: 20px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            overflow-x: hidden;
+        }
+        .header { 
+            text-align: center; 
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%); 
+            color: white; 
+            padding: 60px 20px; 
+            border-radius: 20px; 
+            margin-bottom: 40px; 
+            box-shadow: 0 20px 40px rgba(30,58,138,0.3);
+            animation: slideDown 1s ease-out;
+            transform: translateY(0);
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header h1 { 
+            font-size: 3em; 
+            margin-bottom: 15px; 
+            background: linear-gradient(45deg, #fff, #e0f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(255,255,255,0.8)); }
+        }
+        .section { 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px; 
+            padding: 30px; 
+            border-radius: 16px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .section.animate { opacity: 1; transform: translateY(0); }
+        .section h2 { 
+            color: #1e40af; 
+            border-bottom: 3px solid linear-gradient(90deg, #3b82f6, #10b981);
+            padding-bottom: 15px; 
+            margin-bottom: 25px; 
+            font-size: 1.5em;
+            position: relative;
+        }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px; left: 0;
+            width: 0; height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            transition: width 0.5s ease;
+        }
+        .section:hover h2::after { width: 100%; }
+        ul { list-style: none; padding-left: 0; }
+        li { 
+            position: relative; 
+            padding-left: 30px; 
+            margin-bottom: 12px; 
+            transition: all 0.3s ease;
+        }
+        li:hover { transform: translateX(10px); color: #1e3a8a; }
+        li:before { 
+            content: "🚀"; 
+            position: absolute; 
+            left: 0; 
+            font-size: 1.1em;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-3px); }
+        }
+        .metrics { 
+            color: #059669; 
+            font-weight: bold; 
+            font-size: 1.05em;
+            background: linear-gradient(90deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .download-btn { 
+            display: inline-block; 
+            background: linear-gradient(45deg, #10b981, #059669); 
+            color: white; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            margin: 20px 0; 
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 25px rgba(16,185,129,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .download-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .download-btn:hover::before { left: 100%; }
+        .download-btn:hover { 
+            transform: translateY(-5px) scale(1.05); 
+            box-shadow: 0 15px 35px rgba(16,185,129,0.6);
+        }
+        .contact { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin: 20px 0;
+        }
+        .contact a { 
+            color: #3b82f6; 
+            text-decoration: none; 
+            padding: 8px 16px; 
+            border: 2px solid #3b82f6; 
+            border-radius: 25px; 
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .contact a:hover { 
+            background: #3b82f6; 
+            color: white; 
+            transform: scale(1.1);
+        }
+        h3 { color: #1e40af; margin: 20px 0 10px 0; font-size: 1.3em; }
+        @media (max-width: 768px) { 
+            .header h1 { font-size: 2.2em; } 
+            body { padding: 10px; } 
+            .section { padding: 20px; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Лобанов Дмитрий</h1>
+        <h2>HR Generalist (HR BP) | IT Recruitment Expert</h2>
+        <p><strong>5 лет опыта</strong> | <span class="metrics">Экономлю 1–3 млн ₽/год</span> | Retention 95% | Revenue +15–25%</p>
+        
+        <div class="contact">
+            <a href="mailto:bugagashenka.97@mail.ru">📧 bugagashenka.97@mail.ru</a>
+            <a href="https://t.me/Larek_9">📱 TG: @Larek_9</a>
+            <a href="https://linkedin.com/in/dmitry-lobanov-hr" target="_blank">💼 LinkedIn</a>
+        </div>
+        
+        <a href="#resume-pdf" class="download-btn" download>📥 Скачать PDF резюме</a>
+        <p style="margin-top: 10px; opacity: 0.9;">Москва (удалённо/гибрид) | 150 000 ₽ на руки</p>
+    </div>
+
+    <div class="section">
+        <h2>💼 Value Proposition</h2>
+        <p><strong>HR-профи с 5-летним IT-опытом:</strong> <span class="metrics">экономлю 1–3 млн ₽/год на найме</span>, retention 95%, формирую команды для revenue +15–25%. Масштабирую HR процессы для вашей прибыли.</p>
+    </div>
+
+    <div class="section">
+        <h2>📈 Ключевой опыт</h2>
+        
+        <h3>HR-консультант (фриланс) <span style="color:#6b7280; font-size:0.9em;">Янв 2025 — сейчас</span></h3>
+        <p>Внешний HR-партнёр для 7+ компаний (IT, Digital, строительство).</p>
+        <ul>
+            <li><span class="metrics">25+ executive вакансий (до 800k ₽/мес), сэкономил 2+ млн ₽</span></li>
+            <li><span class="metrics">Time-to-hire -30% (18 дней), клиентский revenue +15%</span></li>
+            <li>Talent pools 200+/клиент, будущие затраты -40%</li>
+            <li>50+ интервью, offer acceptance 85%</li>
+        </ul>
+
+        <h3>Ведущий IT-рекрутер (HRG), Автомакон <span style="color:#6b7280; font-size:0.9em;">Янв 2024 — Янв 2025</span></h3>
+        <ul>
+            <li><span class="metrics">Time-to-hire 21 день (-25%), сэкономил 1,8 млн ₽ на 15+ позициях</span></li>
+            <li><span class="metrics">Retention 95%, избежал потерь 2,5 млн ₽ (40+ сотрудников)</span></li>
+            <li><span class="metrics">Cost-per-hire -18% (45k ₽), Huntflow сэкономил 120 ч/год</span></li>
+            <li>Team lead 3 рекрутеров: KPI +40%</li>
+        </ul>
+
+        <h3>IT-рекрутер, SurfIT <span style="color:#6b7280; font-size:0.9em;">2021–2023</span></h3>
+        <ul>
+            <li><span class="metrics">3 dev-команды, +25% revenue от 2 продуктов</span></li>
+            <li><span class="metrics">100+ позиций, вакансии -35% (резерв 500+)</span></li>
+            <li>L&D 5+ специалистов: скорость +50%</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🎓 Сертификаты & Skills</h2>
+        <ul>
+            <li><strong>2024 — HR-аналитика (ROI metrics)</strong>, Netology</li>
+            <li><strong>2024 — Senior IT Recruiter (Boolean/X-Ray)</strong>, Pritula Academy</li>
+            <li>Huntflow, hh.ru/Habr/LinkedIn/TG | Java/QA/DevOps/1C/Mobile | Английский B1 (IT)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>✅ Рекомендация</h2>
+        <p><strong>Альбина Громова</strong>, Руководитель HR Автомакон<br>
+        <a href="mailto:albina.gromova@avtomacon.ru" style="color: #059669; font-weight: bold;">📧 Связаться</a></p>
+    </div>
+
+    <script>
+        // Scroll анимации
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+        
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Плавный скролл
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
