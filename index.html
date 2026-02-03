@@ -19,12 +19,13 @@
         }
         .header { 
             text-align: center; 
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1d4ed8 100%); 
+            /* НОВЫЙ ЦВЕТ: фиолетово-изумрудный градиент */
+            background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 50%, #10b981 100%); 
             color: #f8fafc; 
             padding: 70px 30px; 
             border-radius: 24px; 
             margin-bottom: 50px; 
-            box-shadow: 0 25px 50px rgba(30,64,175,0.4);
+            box-shadow: 0 25px 50px rgba(124,58,237,0.4);
             animation: slideDown 1.2s ease-out;
             position: relative;
             overflow: hidden;
@@ -43,7 +44,8 @@
         .header h1 { 
             font-size: 3.5em; 
             margin-bottom: 20px; 
-            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+            /* НОВЫЙ ТЕКСТ: золотисто-белый градиент */
+            background: linear-gradient(45deg, #fef3c7, #f8fafc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: glow 2.5s ease-in-out infinite alternate;
@@ -51,9 +53,10 @@
             z-index: 1;
         }
         @keyframes glow {
-            from { filter: drop-shadow(0 0 10px rgba(248,250,252,0.6)); }
-            to { filter: drop-shadow(0 0 30px rgba(248,250,252,0.9)); }
+            from { filter: drop-shadow(0 0 10px rgba(254,243,199,0.6)); }
+            to { filter: drop-shadow(0 0 30px rgba(254,243,199,0.9)); }
         }
+        /* ОСТАЛЬНОЕ БЕЗ ИЗМЕНЕНИЙ */
         .section { 
             background: rgba(15,23,42,0.85); 
             backdrop-filter: blur(15px);
@@ -172,20 +175,20 @@
             margin: 25px 0;
         }
         .contact a { 
-            color: #60a5fa; 
+            color: #fef3c7; /* ЗОЛОТИСТЫЙ ТЕКСТ */
             text-decoration: none; 
             padding: 12px 20px; 
-            border: 2px solid #3b82f6; 
+            border: 2px solid rgba(254,243,199,0.5); 
             border-radius: 30px; 
             transition: all 0.4s ease;
             font-weight: 600;
-            background: rgba(59,130,246,0.1);
+            background: rgba(124,58,237,0.2); /* ФИОЛЕТОВЫЙ ФОН */
         }
         .contact a:hover { 
-            background: #3b82f6; 
+            background: linear-gradient(45deg, #7c3aed, #06b6d4); 
             color: #f8fafc; 
             transform: scale(1.15) rotate(2deg);
-            box-shadow: 0 10px 25px rgba(59,130,246,0.4);
+            box-shadow: 0 10px 25px rgba(124,58,237,0.5);
         }
         .skills-grid {
             display: grid;
@@ -215,6 +218,7 @@
     </style>
 </head>
 <body>
+    <!-- ИЗМЕНЁННЫЙ HEADER С КЛИКАБЕЛЬНЫМИ ССЫЛКАМИ -->
     <div class="header">
         <h1>Лобанов Дмитрий</h1>
         <h2>HR Generalist (HR BP) | IT Recruitment Expert</h2>
@@ -222,14 +226,15 @@
         
         <div class="contact">
             <a href="mailto:bugagashenka.97@mail.ru">📧 bugagashenka.97@mail.ru</a>
-            <a href="https://t.me/Larek_9">📱 TG: @Larek_9</a>
-            <a href="#" target="_blank">💼 LinkedIn</a>
+            <a href="https://t.me/Larek_9" target="_blank">📱 TG: @Larek_9</a>
+            <a href="https://linkedin.com/in/dmitry-lobanov-hr" target="_blank">💼 LinkedIn</a>
         </div>
         
         <a href="#" class="download-btn" download>📥 Скачать PDF резюме</a>
         <p style="margin-top: 15px; opacity: 0.9;">Москва/регионы | Полная занятость (удалённо/гибрид) | 150 000 ₽ на руки</p>
     </div>
 
+    <!-- ВСЁ ОСТАЛЬНОЕ БЕЗ ИЗМЕНЕНИЙ -->
     <div class="section">
         <h2>💼 Value Proposition</h2>
         <p><strong>HR-профи с 5-летним IT-опытом:</strong> <span class="metrics">экономлю 1–3 млн ₽/год на найме</span>, retention 95%, формирую команды для revenue +15–25%. Масштабирую HR процессы для вашей прибыли.</p>
@@ -304,7 +309,6 @@
     </div>
 
     <script>
-        // Scroll анимации
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -317,7 +321,6 @@
             observer.observe(section);
         });
         
-        // Плавный скролл
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
