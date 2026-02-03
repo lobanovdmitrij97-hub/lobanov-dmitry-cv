@@ -6,309 +6,366 @@
     <title>Лобанов Дмитрий | HR Generalist (HR BP) | IT Recruitment Expert</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: #e2e8f0; 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background: radial-gradient(circle at top, #020617 0%, #020617 30%, #020617 60%, #020617 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
-        .header { 
-            text-align: center; 
-            /* НОВЫЙ ЦВЕТ: фиолетово-изумрудный градиент */
-            background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 50%, #10b981 100%); 
-            color: #f8fafc; 
-            padding: 70px 30px; 
-            border-radius: 24px; 
-            margin-bottom: 50px; 
-            box-shadow: 0 25px 50px rgba(124,58,237,0.4);
-            animation: slideDown 1.2s ease-out;
+
+        /* ГЛАВНЫЙ HEADER (ИМЯ + ССЫЛКИ) */
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #111827 0%, #0f172a 40%, #111827 100%);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            color: #e5e7eb;
+            padding: 60px 30px;
+            border-radius: 24px;
+            margin-bottom: 50px;
+            box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
             position: relative;
             overflow: hidden;
+            animation: slideDown 1.2s ease-out;
         }
         .header::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
+            inset: 0;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(59,130,246,0.18), transparent 55%),
+                radial-gradient(circle at 100% 0%, rgba(16,185,129,0.18), transparent 55%);
+            opacity: 0.9;
         }
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-60px); }
+            from { opacity: 0; transform: translateY(-40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .header h1 { 
-            font-size: 3.5em; 
-            margin-bottom: 20px; 
-            /* НОВЫЙ ТЕКСТ: золотисто-белый градиент */
-            background: linear-gradient(45deg, #fef3c7, #f8fafc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2.5s ease-in-out infinite alternate;
+
+        /* Имя и подзаголовок — другой шрифт и цвет */
+        .header-inner {
             position: relative;
             z-index: 1;
         }
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 10px rgba(254,243,199,0.6)); }
-            to { filter: drop-shadow(0 0 30px rgba(254,243,199,0.9)); }
+        .header h1 {
+            font-family: "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 2.8em;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #f97316, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        /* ОСТАЛЬНОЕ БЕЗ ИЗМЕНЕНИЙ */
-        .section { 
-            background: rgba(15,23,42,0.85); 
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(59,130,246,0.2);
-            margin-bottom: 35px; 
-            padding: 35px; 
-            border-radius: 20px; 
-            box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+        .header h2 {
+            font-size: 1.1em;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: 18px;
+        }
+        .header p.main-meta {
+            font-size: 0.98em;
+            color: #cbd5e1;
+            margin-bottom: 24px;
+        }
+
+        /* КОНТАКТЫ — кликабельные ссылки */
+        .contact {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 15px 0 10px;
+        }
+        .contact a {
+            color: #e5e7eb;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.6);
+            background: radial-gradient(circle at top left, rgba(15,118,110,0.5), rgba(15,23,42,0.95));
+            font-size: 0.95em;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+        .contact a span.icon {
+            font-size: 1.1em;
+        }
+        .contact a:hover {
+            border-color: rgba(250,204,21,0.9);
+            color: #fef9c3;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(15,23,42,0.85);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 22px;
+            background: linear-gradient(90deg, #22c55e, #22c55e, #4ade80);
+            color: #022c22;
+            padding: 14px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.98em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 18px 40px rgba(22,163,74,0.7);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        .download-btn:hover::before {
+            transform: translateX(100%);
+        }
+        .download-btn:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 24px 60px rgba(22,163,74,0.9);
+        }
+        .header p.location {
+            margin-top: 14px;
+            font-size: 0.9em;
+            color: #9ca3af;
+        }
+
+        .section {
+            background: rgba(15,23,42,0.92);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(51,65,85,0.9);
+            margin-bottom: 32px;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.7);
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .section.animate { opacity: 1; transform: translateY(0); }
-        .section h2 { 
-            color: #60a5fa; 
-            font-size: 1.8em;
+
+        .section h2 {
+            color: #93c5fd;
+            font-size: 1.5em;
+            margin-bottom: 20px;
             position: relative;
-            margin-bottom: 30px;
         }
         .section h2::after {
             content: '';
             position: absolute;
-            bottom: -8px; left: 0;
-            width: 0; height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #10b981, #f59e0b);
-            border-radius: 2px;
-            transition: width 0.6s ease;
-        }
-        .section:hover h2::after { width: 100%; }
-        .section h3 {
-            color: #94a3b8;
-            font-size: 1.4em;
-            margin: 25px 0 15px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        .section h3::before {
-            content: '▸';
-            color: #3b82f6;
-            font-size: 1.5em;
-            position: absolute;
+            bottom: -6px;
             left: 0;
-            animation: pulse 2s infinite;
+            width: 80px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #3b82f6, #22c55e, #eab308);
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-        ul { list-style: none; padding-left: 0; }
-        li { 
-            position: relative; 
-            padding-left: 35px; 
-            margin-bottom: 15px; 
-            transition: all 0.4s ease;
-            color: #cbd5e1;
-        }
-        li:hover { 
-            transform: translateX(15px); 
-            color: #f8fafc; 
-            padding-left: 45px;
-        }
-        li:before { 
-            content: "⚡"; 
-            position: absolute; 
-            left: 0; 
+
+        .section h3 {
+            color: #e5e7eb;
             font-size: 1.2em;
-            animation: bounce 1.5s infinite alternate;
+            margin: 18px 0 8px;
         }
-        @keyframes bounce {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-5px) rotate(5deg); }
+        .section h3 span.time {
+            color: #94a3b8;
+            font-size: 0.9em;
         }
-        .metrics { 
-            color: #10b981; 
-            font-weight: bold; 
-            font-size: 1.1em;
-            background: linear-gradient(90deg, #10b981, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .section p.sub {
+            color: #9ca3af;
+            margin-bottom: 12px;
+            font-size: 0.95em;
         }
-        .download-btn { 
-            display: inline-block; 
-            background: linear-gradient(45deg, #10b981, #059669, #047857); 
-            color: #f8fafc; 
-            padding: 18px 35px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            margin: 25px 0; 
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 0 12px 35px rgba(16,185,129,0.4);
+
+        ul { list-style: none; padding-left: 0; }
+        li {
             position: relative;
-            overflow: hidden;
-            font-size: 1.1em;
+            padding-left: 26px;
+            margin-bottom: 10px;
+            color: #d1d5db;
+            font-size: 0.97em;
+            transition: all 0.25s ease;
         }
-        .download-btn::before {
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: -100%;
-            width: 100%; 
-            height: 100%; 
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s;
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            color: #22c55e;
         }
-        .download-btn:hover::before { left: 100%; }
-        .download-btn:hover { 
-            transform: translateY(-8px) scale(1.08); 
-            box-shadow: 0 20px 45px rgba(16,185,129,0.6);
+        li:hover {
+            transform: translateX(6px);
+            color: #f9fafb;
         }
-        .contact { 
-            display: flex; 
-            gap: 25px; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            margin: 25px 0;
-        }
-        .contact a { 
-            color: #fef3c7; /* ЗОЛОТИСТЫЙ ТЕКСТ */
-            text-decoration: none; 
-            padding: 12px 20px; 
-            border: 2px solid rgba(254,243,199,0.5); 
-            border-radius: 30px; 
-            transition: all 0.4s ease;
+        .metrics {
+            color: #4ade80;
             font-weight: 600;
-            background: rgba(124,58,237,0.2); /* ФИОЛЕТОВЫЙ ФОН */
         }
-        .contact a:hover { 
-            background: linear-gradient(45deg, #7c3aed, #06b6d4); 
-            color: #f8fafc; 
-            transform: scale(1.15) rotate(2deg);
-            box-shadow: 0 10px 25px rgba(124,58,237,0.5);
-        }
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
         }
         .skill-tag {
-            background: rgba(59,130,246,0.2);
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: 1px solid #3b82f6;
-            color: #94a3b8;
-            transition: all 0.3s ease;
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(148,163,184,0.5);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.9em;
+            color: #e5e7eb;
+            text-align: center;
+            transition: all 0.25s ease;
         }
         .skill-tag:hover {
-            background: #3b82f6;
-            color: #f8fafc;
-            transform: translateY(-3px);
+            background: rgba(34,197,94,0.15);
+            border-color: #22c55e;
+            transform: translateY(-2px);
         }
-        @media (max-width: 768px) { 
-            .header h1 { font-size: 2.5em; } 
-            body { padding: 15px; } 
-            .section { padding: 25px; margin-bottom: 25px; }
-            .contact { flex-direction: column; align-items: center; }
+
+        @media (max-width: 768px) {
+            body { padding: 12px; }
+            .header { padding: 40px 16px; }
+            .header h1 { font-size: 2.2em; }
+            .header h2 { letter-spacing: 0.12em; font-size: 0.95em; }
+            .section { padding: 22px; }
+            .contact { flex-direction: column; align-items: stretch; }
+            .contact a { justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <!-- ИЗМЕНЁННЫЙ HEADER С КЛИКАБЕЛЬНЫМИ ССЫЛКАМИ -->
+    <!-- ГЛАВНЫЙ БЛОК С НОВЫМ ОФОРМЛЕНИЕМ -->
     <div class="header">
-        <h1>Лобанов Дмитрий</h1>
-        <h2>HR Generalist (HR BP) | IT Recruitment Expert</h2>
-        <p><strong>5 лет опыта</strong> | <span class="metrics">Экономлю 1–3 млн ₽/год на найме</span> | Retention 95% | Revenue +15–25%</p>
-        
-        <div class="contact">
-            <a href="mailto:bugagashenka.97@mail.ru">📧 bugagashenka.97@mail.ru</a>
-            <a href="https://t.me/Larek_9" target="_blank">📱 TG: @Larek_9</a>
-            <a href="https://linkedin.com/in/dmitry-lobanov-hr" target="_blank">💼 LinkedIn</a>
+        <div class="header-inner">
+            <h1>ЛОБАНОВ ДМИТРИЙ</h1>
+            <h2>HR GENERALIST (HR BP) · IT TALENT ACQUISITION</h2>
+            <p class="main-meta">
+                5 лет в IT-рекрутменте · <span class="metrics">экономия 1–3 млн ₽/год на найме</span> · retention 95% · рост revenue +15–25%
+            </p>
+
+            <div class="contact">
+                <a href="mailto:bugagashenka.97@mail.ru">
+                    <span class="icon">📧</span> bugagashenka.97@mail.ru
+                </a>
+                <a href="https://t.me/Larek_9" target="_blank" rel="noopener">
+                    <span class="icon">📱</span> TG: @Larek_9
+                </a>
+                <a href="https://linkedin.com/in/dmitry-lobanov-hr" target="_blank" rel="noopener">
+                    <span class="icon">💼</span> LinkedIn
+                </a>
+            </div>
+
+            <a href="#" class="download-btn" download>Скачать PDF резюме</a>
+
+            <p class="location">
+                HR Generalist (HR BP) · Полная занятость · Офис / гибрид / удалёнка · 150 000 ₽ на руки
+            </p>
         </div>
-        
-        <a href="#" class="download-btn" download>📥 Скачать PDF резюме</a>
-        <p style="margin-top: 15px; opacity: 0.9;">Москва/регионы | Полная занятость (удалённо/гибрид) | 150 000 ₽ на руки</p>
-    </div>
-
-    <!-- ВСЁ ОСТАЛЬНОЕ БЕЗ ИЗМЕНЕНИЙ -->
-    <div class="section">
-        <h2>💼 Value Proposition</h2>
-        <p><strong>HR-профи с 5-летним IT-опытом:</strong> <span class="metrics">экономлю 1–3 млн ₽/год на найме</span>, retention 95%, формирую команды для revenue +15–25%. Масштабирую HR процессы для вашей прибыли.</p>
     </div>
 
     <div class="section">
-        <h2>📈 Полный опыт работы</h2>
-        
-        <h3>HR-консультант (фриланс) <span style="color:#94a3b8; font-size:0.9em;">Январь 2025 — настоящее время (1 год 2 месяца)</span></h3>
-        <p style="color:#94a3b8; margin-bottom: 20px;">Внешний HR-партнёр для 7+ компаний (IT, Digital, инжиниринг, строительство)</p>
-        <ul>
-            <li><span class="metrics">Закрыл 25+ middle/senior/executive вакансий (до 600k ₽/мес), сэкономив клиентам 2+ млн ₽ vs агентские ставки</span></li>
-            <li><span class="metrics">Сократил time-to-hire на 25–30% (до 18–21 дня), ускорив запуск проектов и рост revenue на 15% (по фидбеку клиентов)</span></li>
-            <li><span class="metrics">Внедрил competency-based оценку, повысив качество найма на 20% (95% pass probation)</span></li>
-            <li><span class="metrics">Построил talent pools (200+ кандидатов для каждого клиента), снизив будущие затраты на подбор на 40%</span></li>
-            <li>Провёл 50+ интервью, отработав 90% возражений и подняв offer acceptance до 85%</li>
-        </ul>
-
-        <h3>Ведущий IT-рекрутер (HRG), Автомакон (Вкусвилл) <span style="color:#94a3b8; font-size:0.9em;">Январь 2024 — Январь 2025 (1 год 1 месяц)</span></h3>
-        <p style="color:#94a3b8; margin-bottom: 20px;">Управлял 8–12 IT-вакансиями (Middle/Senior/Lead/Architect/CTO/COO)</p>
-        <ul>
-            <li><span class="metrics">Сократил time-to-hire до 21 дня (-25% к рынку), сэкономив 1,8 млн ₽ на 15+ сложных позициях (до 800k ₽/мес)</span></li>
-            <li><span class="metrics">Повысил retention до 95% (+15% к 2023), избежав потерь 2,5 млн ₽ на замену 40+ сотрудников (turnover cost ~2 мес. salary)</span></li>
-            <li><span class="metrics">Снизил cost-per-hire на 18% (до 45k ₽/позицию) via TG/рефералы, внедрил Huntflow-метрики, сэкономив 120 ч/год</span></li>
-            <li><span class="metrics">Руководил 3 рекрутерами: +40% их KPI (закрытия/мес), усилив команду без доп. найма</span></li>
-            <li>Создал чек-листы для 7 направлений (Java/QA/DevOps); вёл C-level переговоры, формируя JD</li>
-            <li><strong>Техстек:</strong> hh.ru/Habr/LinkedIn/TG/X-Ray/Boolean; 1C/Mobile/QA/DBA/Backend/Frontend</li>
-        </ul>
-
-        <h3>IT-рекрутер (Junior/Middle), SurfIT (Севастополь) <span style="color:#94a3b8; font-size:0.9em;">Февраль 2021 — Ноябрь 2023 (2 года 10 месяцев)</span></h3>
-        <p style="color:#94a3b8; margin-bottom: 20px;">Выстроил IT-подбор с нуля: 5–10 закрытий/мес (регионы: Москва, СПб, Казань, Крым)</p>
-        <ul>
-            <li><span class="metrics">Сформировал 3 dev-команды (15–20 чел. total), запустив 2 продукта — +25% revenue от новых линий</span></li>
-            <li><span class="metrics">Снизил ошибочные наймы на 25% via STAR-оценка софт-скиллов; time-to-fill массового подбора — 14 дней</span></li>
-            <li><span class="metrics">Внедрил автоматизацию/метрики: +30% эффективности источников (GitHub/LinkedIn), база 500+ талантов</span></li>
-            <li><span class="metrics">Закрыл 100+ позиций (junior–lead), сократив вакансии на 35% за счёт резерва</span></li>
-            <li><span class="metrics">Обучил 5+ специалистов: +50% их скорости подбора (с 25 до 12 дней/позицию)</span></li>
-        </ul>
+        <h2>Обо мне</h2>
+        <p>
+            HR-профи с 5 годами IT-опыта: <span class="metrics">экономлю 1–3 млн ₽/год на найме</span>, расту retention до 95%, 
+            формирую команды для revenue +15–25%. Готов принести вашей компании measurable прибыль через таланты.
+        </p>
     </div>
 
     <div class="section">
-        <h2>🎓 Образование & Сертификаты</h2>
+        <h2>Опыт работы</h2>
+
+        <h3>HR-консультант (фриланс) <span class="time">· Январь 2025 — настоящее время (1 год 2 месяца)</span></h3>
+        <p class="sub">Самостоятельная деятельность (фриланс). Внешний HR-партнёр для 7+ компаний (IT, Digital, инжиниринг, строительство).</p>
         <ul>
-            <li><strong>2024 — HR-аналитика (ROI/recruitment metrics)</strong>, Netology</li>
-            <li><strong>2024 — Senior IT Recruiter (Boolean/X-Ray, IT-оценка)</strong>, Pritula Academy</li>
-            <li><strong>2022 — iOS-разработчик</strong>, GeekBrains</li>
-            <li>Неоконченное высшее, 2025 — Севастопольский государственный университет (Кораблестроение и океанотехника)</li>
+            <li><span class="metrics">Закрыл 25+ middle/senior и executive вакансий (до 600k ₽/мес), сэкономив клиентам 2+ млн ₽ на найме vs агентские ставки.</span></li>
+            <li><span class="metrics">Сократил time-to-hire на 25–30%, ускорив запуск проектов и рост revenue на 15% (по фидбеку клиентов).</span></li>
+            <li><span class="metrics">Внедрил competency-based оценку, повысив качество найма на 20% (95% pass probation).</span></li>
+            <li><span class="metrics">Построил talent pools (200+ кандидатов для каждого клиента), снизив будущие затраты на подбор на 40%.</span></li>
+            <li>Провёл 50+ интервью, отработав 90% возражений и подняв offer acceptance до 85%.</li>
+        </ul>
+
+        <h3>Ведущий IT рекрутер (с функциями HRG), Автомакон (Вкусвилл) <span class="time">· Январь 2024 — Январь 2025 (1 год 1 месяц)</span></h3>
+        <p class="sub">Управлял 8–12 IT-вакансиями (Middle/Senior/Lead/Architect).</p>
+        <ul>
+            <li><span class="metrics">Сократил time-to-hire до 21 дня (-25% к рынку), сэкономив 1,8 млн ₽ на 15+ сложных позициях (архитекторы/Tech Lead, CTO/COO до 800k ₽/мес).</span></li>
+            <li><span class="metrics">Повысил retention до 95% (+15% к 2023), избежав потерь 2,5 млн ₽ на замену 40+ сотрудников (turnover cost ~2 мес. salary).</span></li>
+            <li><span class="metrics">Снизил cost-per-hire на 18% (до 45k ₽/позицию) за счёт TG-каналов и реферальных программ; внедрил Huntflow-метрики, сэкономив 120 ч/год на отчётах.</span></li>
+            <li><span class="metrics">Руководил 3 рекрутерами: +40% их KPI (закрытия/мес), усилив команду без доп. найма.</span></li>
+            <li>Создал чек-листы для 7 направлений (Java/QA/DevOps); вёл C-level переговоры, формируя JD.</li>
+            <li><strong>Техстек:</strong> hh.ru, Habr, LinkedIn, TG, X-Ray; 1C, Mobile, QA, DBA, Backend, Frontend.</li>
+        </ul>
+
+        <h3>IT Рекрутер (junior/middle), SurfIT (Севастополь) <span class="time">· Февраль 2021 — Ноябрь 2023 (2 года 10 месяцев)</span></h3>
+        <p class="sub">Выстроил IT-подбор с нуля: 5–10 закрытий/мес (регионы Москва, Санкт-Петербург, Казань, Крым).</p>
+        <ul>
+            <li><span class="metrics">Сформировал 3 dev-команды (15–20 чел. total), запустив 2 продукта — +25% revenue от новых линий (по внутренним метрикам).</span></li>
+            <li><span class="metrics">Снизил ошибочные наймы на 25% via STAR-оценка софт-скиллов; time-to-fill массового подбора — 14 дней.</span></li>
+            <li><span class="metrics">Внедрил автоматизацию/метрики: +30% эффективности источников (GitHub/LinkedIn), база 500+ талантов.</span></li>
+            <li><span class="metrics">Закрыл 100+ позиций (junior–lead), сократив вакансии на 35% за счёт резерва.</span></li>
+            <li><span class="metrics">Обучил 5+ специалистов: +50% их скорости подбора (с 25 до 12 дней/позицию).</span></li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>🛠 Полный стек навыков</h2>
+        <h2>Образование</h2>
+        <ul>
+            <li>Неоконченное высшее, 2025 — Севастопольский государственный университет, Севастополь.</li>
+            <li>Направление: Океанотехника и Кораблестроение, Кораблестроение и океанотехника.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Повышение квалификации, курсы</h2>
+        <ul>
+            <li><strong>2024 — HR-аналитика (ROI/recruitment metrics)</strong>, Netology, HR.</li>
+            <li><strong>2024 — Senior IT Recruiter (Boolean/X-Ray, IT-оценка)</strong>, Pritula Academy, IT recruitment.</li>
+            <li><strong>2022 — iOS-разработчик</strong>, GeekBrains, iOS разработка.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Навыки</h2>
+        <ul>
+            <li><strong>Языки:</strong> Русский — родной, Английский — B2.</li>
+        </ul>
         <div class="skills-grid">
-            <div class="skill-tag">IT Recruitment (full-cycle)</div>
-            <div class="skill-tag">HR-аналитика (ROI/KPI/time-to-hire)</div>
-            <div class="skill-tag">Huntflow / HR-Link</div>
-            <div class="skill-tag">Boolean / X-Ray поиск</div>
+            <div class="skill-tag">Адаптация персонала</div>
+            <div class="skill-tag">Подбор персонала / IT Recruitment</div>
             <div class="skill-tag">Работа с возражениями</div>
             <div class="skill-tag">Оценка компетенций</div>
-            <div class="skill-tag">Управление командой (KPI +40%)</div>
-            <div class="skill-tag">Адаптация персонала</div>
-            <div class="skill-tag">Наставничество / L&D</div>
-            <div class="skill-tag">Английский B2</div>
+            <div class="skill-tag">Наставничество</div>
+            <div class="skill-tag">Управление командой</div>
+            <div class="skill-tag">HR-аналитика, разработка HR-метрик</div>
+            <div class="skill-tag">Huntflow, HR-Link</div>
+            <div class="skill-tag">Boolean / X-Ray поиск</div>
+            <div class="skill-tag">Автоматизация HR-процессов</div>
         </div>
     </div>
 
     <div class="section">
-        <h2>✅ Рекомендации</h2>
-        <p><strong>Альбина Громова</strong><br>
-        Руководитель HR отдела, Автомакон (Вкусвилл)<br>
-        <a href="mailto:albina.gromova@avtomacon.ru" style="color: #10b981; font-weight: bold; font-size: 1.1em;">📧 Связаться для рекомендации</a></p>
+        <h2>Рекомендации</h2>
+        <ul>
+            <li><strong>Автомакон:</strong> Альбина Громова (Руководитель HR отдела).</li>
+        </ul>
     </div>
 
     <script>
+        // Появление секций при скролле
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -316,19 +373,8 @@
                 }
             });
         });
-        
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+
+        document.querySelectorAll('.section').forEach(section => observer.observe(section));
     </script>
 </body>
 </html>
