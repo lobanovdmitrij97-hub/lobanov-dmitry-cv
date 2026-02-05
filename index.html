@@ -52,6 +52,20 @@
             position: relative;
             z-index: 1;
         }
+
+        /* ФОТО ПРОФИЛЯ */
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(56,189,248,0.5);
+            box-shadow: 0 20px 40px rgba(15,23,42,0.85);
+            margin: 0 auto 20px;
+            display: block;
+            background-color: #020617;
+        }
+
         /* Имя — не капсом, поменьше, меньше letter-spacing */
         .header h1 {
             font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -253,6 +267,7 @@
             .header { padding: 40px 16px; }
             .header h1 { font-size: 1.9em; }
             .header h2 { letter-spacing: 0.12em; font-size: 0.95em; }
+            .profile-photo { width: 140px; height: 140px; }
             .section { padding: 22px; }
             .contact { flex-direction: column; align-items: stretch; }
             .contact a { justify-content: center; }
@@ -262,6 +277,10 @@
 <body>
     <div class="header">
         <div class="header-inner">
+
+            <!-- ТВОЁ ФОТО В КРУЖКЕ НАД ИМЕНЕМ -->
+            <img src="photo.jpg" alt="Дмитрий Лобанов" class="profile-photo">
+
             <h1>Лобанов Дмитрий</h1>
             <h2>HR GENERALIST (HR BP) · IT TALENT ACQUISITION</h2>
             <p class="main-meta">
@@ -272,8 +291,8 @@
                 <a href="mailto:lobanovdmitrij.97@gmail.com">
                     <span class="icon">📧</span> lobanovdmitrij.97@gmail.com
                 </a>
-                <a href="https://t.me/Larek_9" target="_blank" rel="noopener">
-                    <span class="icon">📱</span> TG: @Larek_9
+                <a href="https://t.me/Lobanov_Dmitrij" target="_blank" rel="noopener">
+                    <span class="icon">📱</span> TG: @Lobanov_Dмитrij
                 </a>
                 <a href="https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%BB%D0%BE%D0%B1%D0%B0%D0%BD%D0%BE%D0%B2-a90193237/" target="_blank" rel="noopener">
                     <span class="icon">💼</span> LinkedIn
